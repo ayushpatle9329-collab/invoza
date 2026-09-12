@@ -32,8 +32,67 @@ function auth() {
     return null;
   }
 }
+// function requireAuth() {
+//   if (!auth()) location.href = "/pages/login2.html";
+// }
+function auth() {
+  try {
+    const saved = localStorage.getItem("invozaUser");
+
+    if (!saved || saved === "undefined" || saved === "null") {
+      return null;
+    }
+
+    const user = JSON.parse(saved);
+
+    if (!user || typeof user !== "object" || !user.email) {
+      return null;
+    }
+
+    return user;
+  } catch {
+    return null;
+  }
+}
+
 function requireAuth() {
-  if (!auth()) location.href = "/pages/login2.html";
+  const user = auth();
+
+  if (!user) {
+    console.log("INVOZA: User not logged in");
+    location.replace("/pages/login2.html");
+    return false;
+  }
+
+  return true;
+}
+
+async function loginSubmit(e) {
+  e.preventDefault();
+
+  try {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    const d = await api("/login", {
+      method: "POST",
+      body: JSON.stringify({ email, password }),
+    });
+
+    if (!d || !d.success || !d.user || !d.user.email) {
+      throw new Error("Login response invalid");
+    }
+
+    localStorage.setItem(
+      "invozaUser",
+      JSON.stringify(d.user)
+    );
+
+    location.replace("/pages/dashboard.html");
+
+  } catch (x) {
+    showAlert("alert", x.message);
+  }
 }
 function logout() {
   localStorage.removeItem("invozaUser");
