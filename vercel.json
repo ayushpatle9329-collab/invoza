@@ -1,7 +1,7 @@
 {
     "rewrites": [
         {
-            "source": "/api/:path*","destination":"https://invoza-smart-bill.onrender.com/api/:path?*"
+            "source": "/api/:path*","destination":"https://invoza-smart-bill.onrender.com/api/:path*"
         }
     ]
 }
