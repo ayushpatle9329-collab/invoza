@@ -1,16 +1,32 @@
 // Smart-Bill / INVOZA
-// Dependency-free C++17 HTTP backend for Windows
+// Dependency-free C++17 HTTP backend for Windows and Linux
 //
 // Build:
 // g++ -std=c++17 backend/main.cpp -o backend/smartbill_server.exe -lws2_32
 
+#ifdef _WIN32
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <windows.h>
+#else
+#include <arpa/inet.h>
+#include <netinet/in.h>
+#include <sys/socket.h>
+#include <unistd.h>
+
+using SOCKET = int;
+constexpr SOCKET INVALID_SOCKET = -1;
+constexpr int SOCKET_ERROR = -1;
+
+int closesocket(SOCKET socket) {
+    return close(socket);
+}
+#endif
 
 #include <algorithm>
 #include <chrono>
 #include <cctype>
+#include <cstdlib>
 #include <filesystem>
 #include <fstream>
 #include <iomanip>
@@ -27,8 +43,30 @@
 namespace fs = std::filesystem;
 using namespace std;
 
-const int PORT = 8080;
-const string DB_DIR = "database";
+int serverPort() {
+    const char* value = getenv("PORT");
+
+    if (!value || !*value)
+        return 8080;
+
+    char* end = nullptr;
+    long port = strtol(value, &end, 10);
+
+    return end && *end == '\0' &&
+           port > 0 && port <= 65535
+        ? static_cast<int>(port)
+        : 8080;
+}
+
+const int PORT = serverPort();
+
+const string DB_DIR = [] {
+    const char* value = getenv("SMARTBILL_DB_DIR");
+
+    return value && *value
+        ? string(value)
+        : string("database");
+}();
 
 mutex dbMutex;
 
@@ -40,7 +78,11 @@ string nowISO() {
     time_t t = time(nullptr);
     tm lt{};
 
+#ifdef _WIN32
     localtime_s(&lt, &t);
+#else
+    localtime_r(&t, &lt);
+#endif
 
     char b[32];
     strftime(b, sizeof(b), "%Y-%m-%d %H:%M:%S", &lt);
@@ -853,6 +895,12 @@ string api(
     if (q.method == "OPTIONS")
         return "{}";
 
+    if (p == "/api/health" &&
+        q.method == "GET") {
+
+        return "{\"success\":true,\"status\":\"ok\"}";
+    }
+
     // --------------------------------------------------------
     // LOGIN
     // --------------------------------------------------------
@@ -1660,6 +1708,7 @@ int main() {
 
     ensureDB();
 
+#ifdef _WIN32
     WSADATA wsa;
 
     if (
@@ -1674,6 +1723,7 @@ int main() {
 
         return 1;
     }
+#endif
 
     SOCKET server =
         socket(
@@ -1687,7 +1737,9 @@ int main() {
         cerr
             << "Socket creation failed\n";
 
+#ifdef _WIN32
         WSACleanup();
+#endif
 
         return 1;
     }
@@ -1728,7 +1780,9 @@ int main() {
 
         closesocket(server);
 
+#ifdef _WIN32
         WSACleanup();
+#endif
 
         return 1;
     }
@@ -1745,7 +1799,9 @@ int main() {
 
         closesocket(server);
 
+#ifdef _WIN32
         WSACleanup();
+#endif
 
         return 1;
     }
@@ -1780,7 +1836,9 @@ int main() {
 
     closesocket(server);
 
+#ifdef _WIN32
     WSACleanup();
+#endif
 
     return 0;
 }

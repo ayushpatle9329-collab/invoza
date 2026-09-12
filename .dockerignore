@@ -1,0 +1,9 @@
+.git
+.vscode
+backend/*.exe
+database
+run.bat
+run.sh
+README.md
+netlify.toml
+render.yaml
