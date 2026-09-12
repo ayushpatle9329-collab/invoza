@@ -2,6 +2,7 @@ services:
   - type: web
     name: invoza-api
     runtime: docker
+    plan: free
     healthCheckPath: /api/health
     envVars:
       - key: SMARTBILL_DB_DIR
