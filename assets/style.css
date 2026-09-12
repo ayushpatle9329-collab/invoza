@@ -1,0 +1,736 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+#intro{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    animation: introFade 0.8s ease 2.8s forwards;
+}
+
+.invoza-logo{
+    position: relative;
+    transform: scale(0.2);
+    opacity: 0;
+    animation: logoZoom 2.5s ease forwards;
+}
+.invoza-logo img{
+    width: 250px;
+    height: auto;
+}
+/* .invoza-logo span{
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 180px;
+    font-weight: 900;
+    color: #2681a8;
+    text-shadow: 0 0 10px, #2681a8;
+    transform: scaleX(0.75); */
+/* } */
+/* Logo Animation */
+
+@keyframes logoZoom{
+    /* 0%{
+        transform: scale(0.2);
+        opacity: 0;
+    }
+    25%{
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    55%{
+        transform: scale(1.05);
+    }
+    75%{
+        transform: scale(1);
+    } */
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes introFade{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+ .logo{
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+ .logo img{
+    width: 140px;
+    height: 100px;
+    object-fit: cover;
+ }
+
+ .logo h1{
+    margin: 0;
+ }
+.navbar{
+    /* height: 100px; */
+    display: flex;
+    background-color: rgb(13, 111, 150);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    top: 0%;
+    /* z-index: 1; */
+    position: sticky;
+}
+ul{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+ul li a{
+    color: rgb(250, 252, 253);
+    text-decoration: none;
+    font-size: 17px;
+}
+
+ul li a:hover{
+    color: #19404f;
+}
+
+.hero{
+    min-height: 500px;
+    padding: 80px 60px;
+    text-align: center;
+    background: linear-gradient(135deg, #00bcd4 , #021128);
+    color: white;
+}
+
+.hero h1{
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero button{
+    padding: 12px 25px;
+    margin: 5px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hero button a{
+    text-decoration: none;
+}
+
+.hero button:hover{
+    background-color: #ddd;
+    transform: scale(1.03);
+    transition: 0.8s;
+}
+
+.features{
+     padding: 70px 50px;
+     text-align: center;
+     background-color: #f5f7fa;
+}
+.features-container :hover{
+    transform: scale(0.9);
+    transition: 0.8s;
+}
+
+.features img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+.features h2{
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.features-intro{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.features-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.features-card{
+    width: 280px;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #53cada , #2a4a7b);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0,1);
+}
+
+.features-card h3{
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.features-card p{
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.about{
+    padding: 80px 50px;
+    text-align: center;
+    background-color: white;
+}
+
+.about-contant{
+    max-width: 700px;
+    margin: auto;
+}
+
+.about h2{
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.about p{
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about button{
+    padding: 12px 28px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4895b8;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.about button:hover{
+    color: #04175f;
+}
+
+/* How it works */
+
+.how-it-works{
+    padding: 80px 60px;
+    text-align: center;  
+    background-color: #f5f7fa;
+}
+
+.how-it-works h2{
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.how-intro{
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+
+.steps{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.step{
+    width: 220px;
+    padding: 30px 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0,1);
+}
+
+.step span{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.step h3{
+    font-size: 21px;
+    margin: 15px 0;
+}
+
+.step p{
+    line-height: 1.6;
+}
+
+/* service section  */
+.services{
+    padding: 80px 60px;
+    text-align: center;  
+    background-color: white;
+}
+
+.services-container :hover{
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+.services h2{
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.services-intro{
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+
+.services-container{
+     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+.services-card{
+    width: 220px;
+    padding: 30px 20px;
+    background-color: #f5f7fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0,1);
+}
+
+
+.services-card h3{
+    font-size: 21px;
+    margin: 15px;
+}
+.services-card
+ /* From Uiverse.io by cssbuttons-io */ 
+
+button {
+ position: relative;
+ display: inline-block;
+ cursor: pointer;
+ outline: none;
+ border: 0;
+ vertical-align: middle;
+ text-decoration: none;
+ background: transparent;
+ padding: 0;
+ font-size: inherit;
+ font-family: inherit;
+}
+
+button.learn-more {
+ width: 180px;
+ height: 50px;
+}
+
+button.learn-more .circle {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: relative;
+ display: block;
+ margin: 0;
+ width: 3rem;
+ height: 3rem;
+ background: #282936;
+ border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ margin: auto;
+ background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ left: 0.625rem;
+ width: 1.125rem;
+ height: 0.125rem;
+ background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+ position: absolute;
+ content: "";
+ top: -0.29rem;
+ right: 0.0625rem;
+ width: 0.625rem;
+ height: 0.625rem;
+ border-top: 0.125rem solid #fff;
+ border-right: 0.125rem solid #fff;
+ transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ padding: 0.75rem 0;
+ margin: 0 0 0 1.85rem;
+ color: #282936;
+ font-weight: 700;
+ line-height: 1.6;
+ text-align: center;
+ text-transform: uppercase;
+}
+
+button:hover .circle {
+ width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+ background: #fff;
+ transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+ color: #fff;
+}
+.services-card p{
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Billing */
+
+.billing{
+    padding: 40px;
+    margin-left: 200px;
+}
+.billing h1{
+    margin-bottom: 30px;
+}
+
+.billing{
+    max-width: 900px;
+    padding: 30px;
+    background-color: #f5f7fa;
+    border-radius: 10px;
+}
+.billing h2{
+    margin-bottom: 20px;
+}
+.form-group{
+    margin-bottom: 20px;
+}
+.form-group label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input{
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.billing button{
+    padding: 12px 20px;
+    border: 1px solid #010101;
+    border-radius: 5px;
+    background-color: #0066ff;
+    color: white;
+    cursor: pointer;
+}
+
+.billing button:hover{
+    background-color: #0052cc;
+}
+
+.billing table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background-color: white;
+}
+
+.billing table th, .billing table td{
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+.invoice-total{
+    text-align: right;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer{
+   background-color: rgb(13, 111, 150);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Add product */
+.add-body{
+    margin-left: 190px;
+}
+.add-head {
+  color: rgb(38, 129, 168);
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 15px;
+}
+
+.add-container{
+    height: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 1px;
+    width: 900px;
+    border: 1px solid;
+    border-radius: 10px;
+    background: #f5f7fa;
+}
+
+.add-container label{
+    margin: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.add-container input{
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.add-container select{
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.add-container button{
+    padding: 1px;
+    width: 150px;
+    height: 30px;
+    border: 5px ;
+    border-radius: 13px;
+    background-color: #33a6dc;
+    cursor: pointer;
+}
+
+.add-container button:hover{
+    background-color: #2499c4;
+    transform: scale(1.05);
+}
+
+.form-group{
+    padding: 10px;
+}
+
+
+
+/*anjali bhi faltu or anjali ki faltu css*/
+
+
+ .container{
+  /*display: grid;*/
+  display: flex;
+  width: 100%;
+  /*grid-template-columns: 20rem auto ;*/
+  margin: 0 auto;
+}
+
+aside {
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+aside .top{
+  background-color: #f0efef;
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+
+.logo .img3{
+  padding: 5px;
+  margin: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  position: relative;
+  background-color: #f0efef;
+}
+
+.sidebar a{
+  color: black;
+  text-decoration: none;
+  margin-left: 2rem;
+  gap: 1rem;
+  align-items: center;
+  height: 80px;
+  transition: all .1s ease-in;
+  white-space: nowrap;
+  display: flex;
+
+  color: rgb(87, 11, 115);
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.sidebar a:hover{
+  color: black;
+  text-decoration: none;
+}
+
+.sidebar span{
+  color: black;
+  font-size: 29px;
+}
+
+/*main dashboard*/
+
+main{
+  height: 100%;
+  width: calc(100%-250px);
+  margin-left: 150px;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+.main-nav{
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/* Contact Form */
+
+.contact{
+    width: 100%;
+    height: 100%;
+    padding: 50px 20px;
+    min-height: 100vh;
+    background-color: #f5f7fb;
+}
+
+.contact h2{
+  color: #2681a8;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 15px;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0,1);
+}
+
+.contact-form p{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 23px;
+}
+
+.contact-form label{
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select{
+    outline: none;
+    border-color: #2196f3;
+}
+
+.contact-form button {
+  background: #4b96b6;
+  border: none;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  width: 120px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: skew(-21deg);
+}
+
+.contact-form button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: 0;
+  background: rgb(20, 20, 20);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.contact-form button:hover {
+  color: #fff;
+}
+
+.contact-form button:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}

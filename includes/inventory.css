@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: 0;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color:white;
+  user-select: none;
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+.container{
+  /*display: grid;*/
+  display: flex;
+  width: 100%;
+  /*grid-template-columns: 20rem auto ;*/
+  margin: 0 auto;
+}
+
+aside {
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+aside .top{
+  background-color: #4895b8;
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+
+.logo .img3{
+  padding: 5px;
+  margin: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  background-color: #4895b8;
+}
+
+.sidebar a{
+  color: white;
+  text-decoration: none;
+  margin-left: 2rem;
+  gap: 1rem;
+  align-items: center;
+  height: 80px;
+  transition: all .1s ease-in;
+  white-space: nowrap;
+  display: flex;
+
+
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.sidebar a:hover{
+  color: black;
+  text-decoration: none;
+}
+
+.sidebar span{
+  color: black;
+  font-size: 29px;
+}
+
+/*main dashboard*/
+
+main{
+  height: 100%;
+  width: 100%;
+  margin-left: 250px;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+.main-color{
+  background-image: linear-gradient(  #4895b8 , #09384e);
+
+}
+
+.main-nav{
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/*card*/
+
+ .card{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  min-width: 0;
+  height: 150px;
+  padding: 10px;
+  box-sizing: border-box;
+  justify-content: center;
+  border-radius: 15px;
+  box-shadow: none;
+
+  background-color: rgb(213, 213, 213);
+  margin: 20px;
+  position: relative;
+  gap: 0.5em;
+  transition: 1s ease-out;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.card span{
+  box-sizing: border-box;
+  border-radius: 11px;
+}
+
+.card:hover{
+ transform: scale(1.07);
+  transition: 0.8s;
+}
+
+
+/*tables*/
+
+.transactions{
+  margin: 50px;
+
+}
+
+.stock{
+  margin: 50px;
+}
+
+.dash-over{
+  margin: 50px;
+}
+
+.search{
+  display: flex;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  
+}
+.product{
+  display: flex;
+  gap: 20px;
+  padding: 3px;
+  align-items: center;
+  margin-left: 30px;
+
+  position: relative;
+}
+.product input{
+  width: 300px;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 600;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 15px 15px 15px 45px;
+
+}
+
+#search:focus{
+  border: 2px solid blue;
+  outline: none;
+}
+
+.product i{
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.product select{
+  width: 250px;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+
+table{
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 300px;
+}
+thead{
+  border: 1px solid black;
+  background-color: darkgrey;
+  position: sticky;
+  z-index: 2;
+}
+th{
+  border: 1px solid black;
+  padding: 12px;
+}
+.inventory-table{
+  margin: 40px;
+  background-color: rgb(213, 213, 213);
+  width: 1000px;
+  height: 1000px;
+
+  text-align: center;
+
+  border-radius: 10px;
+  transition: 1s ease-out;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}

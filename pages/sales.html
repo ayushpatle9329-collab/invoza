@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sales — INVOZA</title>
+    <link rel="stylesheet" href="../assets/app.css">
+</head>
+
+<body onload="loadTable('/sales','#salesRows','sales')">
+    <nav class="dashnav">
+        <div class="brand">INVOZA</div>
+        <ul class="dashlinks">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="invoicing.html">Billing</a></li>
+            <li><a href="purchases.html">Purchases</a></li>
+            <li><a href="bills.html">Invoices</a></li>
+            <li><a class="active" href="sales.html">Sales</a></li>
+            <li><a href="reports.html">Reports</a></li>
+        </ul><button class="btn logout" onclick="logout()">Logout</button>
+    </nav>
+    <main class="container">
+        <h1>Sales</h1>
+        <div class="panel">
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Invoice</th>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Items</th>
+                            <th>Amount</th>
+                            <th>Payment</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="salesRows"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="../assets/script.js"></script>
+</body>
+
+</html>

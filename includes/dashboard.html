@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="dash.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!--aside section-->
+      <aside>
+        <div class="top">
+          <div
+            class="logo"
+            style="
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              gap: 20px;
+              align-items: center;
+            "
+          >
+            <img src="IMG_0759.PNG" alt="logo" class="img3" />
+            <h1>INVOZA</h1>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <div>
+            <a href="dashboard.html">
+              <span class="material-symbols-outlined"> dashboard </span>
+              <h3>Dashboard</h3>
+            </a>
+          </div>
+          <div>
+            <a href="bills.html">
+              <span class="material-symbols-outlined"> receipt_long </span>
+              <h3>Invoices</h3>
+            </a>
+          </div>
+          <div>
+            <a href="inventory.html">
+              <span class="material-symbols-outlined"> inventory </span>
+              <h3>Inventory</h3>
+            </a>
+          </div>
+          <div>
+            <a href="report.html">
+              <span class="material-symbols-outlined"> finance_mode </span>
+              <h3>Reports</h3>
+            </a>
+          </div>
+          <div>
+            <a href="add-product.html">
+              <span class="material-symbols-outlined"> add_shopping_cart </span>
+              <h3>Add Products</h3>
+            </a>
+          </div>
+          <div>
+              <h3><a href="navbar.html">Logout<span class="material-symbols-outlined"> logout </span></a></h3>           
+          </div>
+        </div>
+      </aside>
+
+      <!--main section-->
+      <main class="main-color">
+        <div class="main-nav">
+          <div>
+          <h1>Dashboard</h1>
+          </div>
+          <!-- Admin -->
+
+          
+        <!-- DAshboard overview -->
+          <div>
+            <h2 class="dash-over"><b>|</b> Dashboard Overview</h2>
+          </div>
+          <div class="date" style="margin-left: 40px">
+            <input type="date" >
+          </div>
+
+          <div
+            class="insights"
+            style="
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 20px;
+              width: 100%;
+              box-sizing: border-box;
+            "
+          >
+            <div class="card">
+              <div style="display: flex;flex-direction: row;flex-wrap: nowrap;gap: 20px;">
+                <span class="material-symbols-outlined">
+                  currency_rupee_circle
+                </span>
+              </div>
+              <h3>TOTAL REVENUE</h3>
+              <h1>7,300<span class="material-symbols-outlined"><b>currency_rupee</b></span></h1>
+              <small>Today's revenue</small>
+            </div>
+
+            <div class="card">
+              <div>
+                <span class="material-symbols-outlined"> receipt </span>
+              </div>
+              <h3>TOTAL BILL</h3>
+              <h1>30</h1>
+              <small>Today's generated bill</small>
+            </div>
+
+            <div class="card">
+              <div>
+                <span class="material-symbols-outlined"> trending_up </span>
+              </div>
+              <h3>PROFIT</h3>
+              <h1>4,280<span class="material-symbols-outlined"><b>currency_rupee</b></span></h1>
+              <small>Today's profit</small>
+            </div>
+
+            <div class="card">
+              <div>
+                <span class="material-symbols-outlined"> receipt </span>
+              </div>
+              <h3>MONTHLY REVENUE</h3>
+              <h1>92,030<span class="material-symbols-outlined"><b>currency_rupee</b></span></h1>
+              <small>monthly generated revenue </small>
+            </div>
+
+            <div class="card">
+              <div>
+                <span class="material-symbols-outlined"> receipt </span>
+              </div>
+              <h3>LOW STOCK</h3>
+              <h1>30</h1>
+              <small>overall stock</small>
+            </div>
+          </div>
+        
+
+        <div class="transactions">
+          <h2><b>| </b>Recent Transactions</h2>
+          <div>
+            <table class="transaction-table">
+              <thead>
+                <tr>
+                  <th>Invoice No</th>
+                  <th>Customer</th>
+                  <th>Items</th>
+                  <th>Amount</th>
+                  <th>Payment</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>34643</td>
+                  <td>Raju</td>
+                  <td>1</td>
+                  <td>100</td>
+                  <td>Cash</td>
+                  <td>Pending</td>
+                </tr>
+
+                <tr>
+                  <td>34643</td>
+                  <td>Ayush Patle</td>
+                  <td>2</td>
+                  <td>400</td>
+                  <td>Cash</td>
+                  <td>Paid</td>
+                </tr>
+
+                <tr>
+                  <td>34643</td>
+                  <td>Ramu Kaka</td>
+                  <td>6</td>
+                  <td>489</td>
+                  <td>UPI</td>
+                  <td>Paid</td>
+                </tr>
+
+                <tr>
+                  <td>34643</td>
+                  <td>Ayush Patle</td>
+                  <td>2</td>
+                  <td>400</td>
+                  <td>Cash</td>
+                  <td>Pending</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        
+          <h2><b>| </b>Low Stock</h2>
+          <div class="stock-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Products</th>
+                  <th>Category</th>
+                  <th>Current Stock</th>
+                  <th>Min. Stock</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>34643</td>
+                  <td>Raju</td>
+                  <td>1</td>
+                  <td>100</td>
+                  <td>Pending</td>
+                </tr>
+
+                <tr>
+                  <td>34643</td>
+                  <td>Ayush Patle</td>
+                  <td>2</td>
+                  <td>400</td>
+                  <td>Paid</td>
+                </tr>
+
+                <tr>
+                  <td>34643</td>
+                  <td>Ramu Kaka</td>
+                  <td>6</td>
+                  <td>489</td>
+                  <td>Paid</td>
+                </tr>
+
+                <tr>
+                  <td>34643</td>
+                  <td>Ayush Patle</td>
+                  <td>2</td>
+                  <td>400</td>
+                  <td>Pending</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
