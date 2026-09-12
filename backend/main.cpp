@@ -26,6 +26,7 @@ int closesocket(SOCKET socket) {
 #include <algorithm>
 #include <chrono>
 #include <cctype>
+#include <cstring>
 #include <cstdlib>
 #include <filesystem>
 #include <fstream>
